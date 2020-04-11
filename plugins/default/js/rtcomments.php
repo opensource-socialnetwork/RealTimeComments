@@ -66,8 +66,8 @@ Ossn.commentTyping = function($guid, $type){
 	}
 	var $cguid  = $guid;
 	var $ctype  = $type;
-	var $elem   = $('.user-activity .ctyping-'+$ctype+'-'+$cguid);	
-	var $timestamp = $('.user-activity .ctyping-'+$ctype+'-'+$cguid).attr('data-time');
+	var $elem   = $('.ctyping-'+$ctype+'-'+$cguid);	
+	var $timestamp = $('.ctyping-'+$ctype+'-'+$cguid).attr('data-time');
 	
 	var $status = {
       	url: Ossn.site_url+'action/rtcomments/status?guid='+$cguid+'&type='+$ctype,
@@ -84,7 +84,7 @@ Ossn.commentTyping = function($guid, $type){
 		}
     };	
 	setInterval(function(){
-		if($('.user-activity .ctyping-'+$ctype+'-'+$cguid).isInViewComments()){	
+		if($('.ctyping-'+$ctype+'-'+$cguid).isInViewComments()){	
 			if($(".ossn-comments-list-"+$type.charAt(0)+""+$guid).find('.comments-item').length){
 				var $ids  = new Array();
 				$($(".ossn-comments-list-"+$type.charAt(0)+""+$guid).find('.comments-item')).each(function(){
