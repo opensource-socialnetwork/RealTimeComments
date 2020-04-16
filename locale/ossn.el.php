@@ -11,4 +11,4 @@
 $el = array(
 	'rtcomments:typing' => 'Κάποιος πληκτρολογεί ένα σχόλιο...',
 );
-ossn_register_languages('en', $el); 
+ossn_register_languages('el', $el); 
