@@ -10,6 +10,9 @@ $.fn.isInViewComments = function(){
     viewport.bottom = viewport.top + win.height();
 
     var bounds = this.offset();
+    if(!bounds){
+	return false;	
+    }	
     bounds.right = bounds.left + this.outerWidth();
     bounds.bottom = bounds.top + this.outerHeight();
 
