@@ -12,13 +12,14 @@ define('RealTimeComments', ossn_route()->com . 'RealTimeComments/');
 ossn_register_class(array(
 		'RealTimeComments' => RealTimeComments . 'classes/RealTimeComments.php'
 ));
-function rtcomments_init() {
-		ossn_extend_view('comments/post/comments', 'rtcomments/item/js');
-		ossn_extend_view('comments/post/comments_entity', 'rtcomments/item/js_entity');
-		
+function rtcomments_init() {		
 		ossn_extend_view('js/opensource.socialnetwork', 'js/rtcomments');
 		ossn_extend_view('css/ossn.default', 'css/rtcomments');
-		if(ossn_isLoggedin()) {
+		
+		if(ossn_isLoggedin()){
+				ossn_extend_view('comments/post/comments', 'rtcomments/item/js');
+				ossn_extend_view('comments/post/comments_entity', 'rtcomments/item/js_entity');
+		
 				ossn_register_action('rtcomments/status', RealTimeComments . 'actions/status.php');
 				ossn_register_action('rtcomments/setstatus', RealTimeComments . 'actions/setstatus.php');
 				
